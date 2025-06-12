@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phuket House Check</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #fefefe;
+    }
+
+    .hover-soft:hover {
+      background-color: #f8f1e9; /* soft beige hover */
+    }
+  </style>
+</head>
+
+<body class="text-gray-700 bg-white">
+
+  <header class="fixed top-0 w-full bg-white/90 backdrop-blur shadow-sm z-50">
+    <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#hero" class="text-2xl font-light text-gray-800 tracking-wide">GLYNORY</a>
+      <ul class="hidden md:flex space-x-8 text-sm">
+        <li><a href="#about" class="hover:text-amber-600 transition">About</a></li>
+        <li><a href="#services" class="hover:text-amber-600 transition">Services</a></li>
+        <li><a href="#whychooseus" class="hover:text-amber-600 transition">Why Us</a></li>
+        <li><a href="#contact" class="hover:text-amber-600 transition">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="hero" class="h-screen relative flex items-center justify-center text-center px-6 pt-20 overflow-hidden">
+    <!-- Blurred background image layer -->
+    <div class="absolute inset-0">
+      <img src="images/hero.png"
+        class="w-full h-full object-cover object-[center_5%] blur-sm scale-105"
+        alt="Background House Image">
+    </div>
+
+    <!-- Soft overlay -->
+    <div class="absolute inset-0 bg-white/10"></div>
+
+    <!-- Content Layer -->
+    <div class="relative z-10">
+      <h1 class="text-4xl md:text-5xl font-light leading-snug mb-4">A Softer Look at Your Home</h1>
+      <p class="text-md md:text-lg text-gray-600 max-w-xl mx-auto mb-6">
+        We offer gentle, detail-oriented inspections — crafted with care for buyers, owners, and developers in Phuket.
+      </p>
+      <a href="#contact"
+        class="inline-block bg-amber-100 text-gray-800 font-semibold px-6 py-3 rounded-full hover:bg-amber-200 transition">
+        Go to our Shop
+      </a>
+    </div>
+  </section>
+
+  <section id="services" class="py-24 bg-white text-center">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-light mb-2">Our Products</h2>
+      <p class="text-gray-500 mb-12">Curated with simplicity and attention to detail</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="p-6 border border-gray-200 rounded-lg hover-soft transition">
+          <h3 class="text-lg font-medium mb-2">Pre-Purchase</h3>
+          <p class="text-sm text-gray-500">For peace of mind before you invest.</p>
+        </div>
+        <div class="p-6 border border-gray-200 rounded-lg hover-soft transition">
+          <h3 class="text-lg font-medium mb-2">Pre-Delivery</h3>
+          <p class="text-sm text-gray-500">Ensure your new home is ready to welcome you.</p>
+        </div>
+        <div class="p-6 border border-gray-200 rounded-lg hover-soft transition">
+          <h3 class="text-lg font-medium mb-2">Maintenance</h3>
+          <p class="text-sm text-gray-500">Stay ahead of wear and time.</p>
+        </div>
+        <div class="p-6 border border-gray-200 rounded-lg hover-soft transition">
+          <h3 class="text-lg font-medium mb-2">Warranty Check</h3>
+          <p class="text-sm text-gray-500">Before your builder’s promise fades.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="py-24 bg-amber-50 text-center">
+    <div class="max-w-2xl mx-auto px-6">
+      <h2 class="text-3xl font-light mb-4">About Us</h2>
+      <p class="text-md text-gray-600 leading-relaxed">
+        We blend construction expertise with clarity and elegance — delivering inspection reports that are not only precise but also beautifully explained. Trust us to bring transparency to your home journey.
+      </p>
+    </div>
+  </section>
+
+  <section id="whychooseus" class="py-24 bg-white text-center">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-light mb-12">Why Choose Us</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-6 border border-gray-200 rounded-lg">
+          <h3 class="text-lg font-medium mb-2">Certified Inspectors</h3>
+          <p class="text-sm text-gray-500">With years of site experience in Phuket.</p>
+        </div>
+        <div class="p-6 border border-gray-200 rounded-lg">
+          <h3 class="text-lg font-medium mb-2">Clear Visual Reports</h3>
+          <p class="text-sm text-gray-500">Delivered digitally within 48 hours.</p>
+        </div>
+        <div class="p-6 border border-gray-200 rounded-lg">
+          <h3 class="text-lg font-medium mb-2">Client-First Approach</h3>
+          <p class="text-sm text-gray-500">Unbiased, honest, and thoughtfully presented.</p>
+        </div>
+      </div>
+      <a href="#contact"
+        class="mt-12 inline-block bg-amber-400 text-white px-6 py-3 rounded-full hover:bg-amber-500 transition">
+        Get a Quote
+      </a>
+    </div>
+  </section>
+
+  <section id="contact" class="py-24 bg-gradient-to-br from-amber-50 to-white text-center">
+    <div class="max-w-xl mx-auto px-6">
+      <h2 class="text-3xl font-light mb-4">Connect with Us</h2>
+      <p class="text-md text-gray-600 mb-6">For inquiries or to schedule your inspection.</p>
+      <div class="space-y-3 text-lg text-gray-700">
+        <p>📞 <a href="tel:+66812345678" class="hover:text-amber-600 transition">+66 81 234 5678</a></p>
+        <p>✉️ <a href="mailto:info@phukethousecheck.com" class="hover:text-amber-600 transition">info@phukethousecheck.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-white border-t border-gray-100 py-8 text-center text-gray-400 text-sm">
+    <div class="flex justify-center space-x-6 mb-4">
+      <a href="https://facebook.com/yourpage" target="_blank" class="hover:text-gray-600">Facebook</a>
+      <a href="https://line.me/R/ti/p/@yourlineid" target="_blank" class="hover:text-gray-600">LINE</a>
+      <a href="tel:+66812345678" class="hover:text-gray-600">Phone</a>
+    </div>
+    <p>&copy; 2025 Phuket House Check. Crafted with care.</p>
+  </footer>
+
+</body>
+</html>
