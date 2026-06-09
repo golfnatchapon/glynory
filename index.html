@@ -1,154 +1,500 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T9Q5038S8T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-T9Q5038S8T');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lumière — Artisan Perfumery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
+  :root{
+    --cream:#FBF8F3;
+    --beige:#EDE6DA;
+    --mauve:#9A6A78;
+    --mauve-deep:#824E5C;
+    --pink-soft:#EDCDD4;
+    --pink-card:#E7C6CE;
+    --sage:#C8D7C2;
+    --woody:#DCD0BD;
+    --oriental:#DECDA6;
+    --ink:#2B1A14;
+    --slate:#6E5A56;
+    --faint:#A89B96;
+    --line:rgba(43,26,20,.10);
+    --serif:'Cormorant Garamond',serif;
+    --sans:'Jost',sans-serif;
+  }
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9Q5038S8T"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'G-T9Q5038S8T');
-  </script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Phuket House Check</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);font-weight:300;background:var(--cream);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+  img{display:block;width:100%;height:100%;object-fit:cover}
+  a{text-decoration:none;color:inherit}
 
-    body {
-      font-family: 'Georgia', serif;
-      background-color: #fefefe;
-    }
+  .wrap{max-width:1320px;margin:0 auto;padding:0 56px}
 
-    .hover-soft:hover {
-      background-color: #f8f1e9; /* soft beige hover */
-    }
-  </style>
+  .eyebrow{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--mauve);font-weight:400}
+  .display{font-family:var(--serif);font-weight:300;line-height:1.06;letter-spacing:.01em}
+  .display em{font-style:italic;color:var(--mauve)}
+
+  /* ── NAV ── */
+  header{position:sticky;top:0;z-index:50;background:rgba(251,248,243,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .brand{font-family:var(--serif);font-size:26px;letter-spacing:.06em;color:var(--ink)}
+  .menu{display:flex;gap:46px;list-style:none}
+  .menu a{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--slate);transition:color .2s}
+  .menu a:hover{color:var(--mauve)}
+  .tools{display:flex;gap:22px;align-items:center}
+  .icon-btn{background:none;border:0;cursor:pointer;color:var(--ink);position:relative;display:grid;place-items:center;padding:2px;transition:color .2s}
+  .icon-btn:hover{color:var(--mauve)}
+  .badge{position:absolute;top:-6px;right:-7px;min-width:16px;height:16px;padding:0 3px;background:var(--mauve);color:#fff;border-radius:9px;font-size:9px;display:grid;place-items:center;font-weight:500}
+
+  /* ── HERO ── */
+  .hero{display:grid;grid-template-columns:1.05fr 1fr;gap:0;align-items:stretch;min-height:calc(100vh - 74px);max-height:780px}
+  .hero-copy{display:flex;flex-direction:column;justify-content:center;padding:40px 64px 40px 0}
+  .hero-copy .eyebrow{margin-bottom:26px}
+  .hero h1{font-size:clamp(54px,6vw,82px);margin-bottom:26px}
+  .hero p.lead{font-size:15px;color:var(--slate);max-width:380px;margin-bottom:40px}
+  .cta-row{display:flex;align-items:center;gap:30px;margin-bottom:60px}
+  .btn{font-family:var(--sans);font-size:11px;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;transition:.25s;border:0}
+  .btn-fill{background:var(--mauve);color:#fff;padding:16px 32px;border-radius:40px;display:inline-flex;align-items:center;gap:9px}
+  .btn-fill:hover{background:var(--mauve-deep)}
+  .btn-link{color:var(--ink);position:relative}
+  .btn-link::after{content:"";position:absolute;left:0;bottom:-5px;width:100%;height:1px;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+  .btn-link:hover::after{transform:scaleX(1)}
+  .stats{display:flex;gap:54px;padding-top:32px;border-top:1px solid var(--line)}
+  .stat b{font-family:var(--serif);font-size:34px;font-weight:400;display:block;line-height:1}
+  .stat span{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-top:7px;display:block}
+
+  .hero-media{position:relative;border-radius:18px;overflow:hidden;align-self:center;height:88%}
+  .hero-media img{transition:transform 1.6s ease}
+  .hero-media:hover img{transform:scale(1.04)}
+  .float-card{position:absolute;bottom:26px;right:26px;background:rgba(251,248,243,.94);backdrop-filter:blur(6px);border-radius:14px;padding:16px 20px;box-shadow:0 12px 34px rgba(43,26,20,.16)}
+  .float-card .k{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);display:block;margin-bottom:6px}
+  .float-card .n{font-family:var(--serif);font-size:15px;display:block;margin-bottom:3px}
+  .float-card .pr{font-size:14px;font-weight:500;color:var(--mauve)}
+
+  /* ── MARQUEE ── */
+  .ticker{background:var(--mauve);overflow:hidden;padding:14px 0}
+  .ticker-track{display:inline-flex;white-space:nowrap;animation:slide 34s linear infinite}
+  @keyframes slide{to{transform:translateX(-50%)}}
+  .ticker-item{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.9);padding:0 34px;display:inline-flex;align-items:center;gap:34px}
+  .ticker-item::before{content:"✦";font-size:8px;opacity:.7}
+
+  /* ── SECTION HEAD ── */
+  section{padding:96px 0}
+  .head-label{display:block;margin-bottom:14px}
+  .section-grid{display:grid;grid-template-columns:1fr 1fr;align-items:end;gap:40px;margin-bottom:56px}
+  .section-grid h2{font-size:clamp(40px,4.5vw,60px)}
+  .section-grid p{font-size:14px;color:var(--slate);max-width:400px;justify-self:end}
+
+  /* ── COLLECTION ── */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .card{background:var(--beige);border-radius:18px;overflow:hidden;cursor:pointer}
+  .card-media{position:relative;aspect-ratio:4/4.4;overflow:hidden}
+  .card-media img{transition:transform .6s ease}
+  .card:hover .card-media img{transform:scale(1.05)}
+  .tag{position:absolute;top:16px;left:16px;font-size:9px;letter-spacing:.12em;text-transform:uppercase;padding:5px 13px;border-radius:20px;font-weight:500;color:#fff}
+  .tag.best{background:var(--mauve)}
+  .tag.new{background:var(--ink)}
+  .heart{position:absolute;top:13px;right:13px;width:34px;height:34px;background:rgba(251,248,243,.92);border:0;border-radius:50%;cursor:pointer;display:grid;place-items:center;box-shadow:0 3px 10px rgba(0,0,0,.12);transition:.2s}
+  .heart:hover{background:#fff;transform:scale(1.08)}
+  .card-body{padding:22px 26px 26px;display:flex;justify-content:space-between;align-items:flex-end}
+  .card-body .nm{font-family:var(--serif);font-size:23px;font-weight:400;margin-bottom:4px}
+  .card-body .sub{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+  .card-body .price{font-family:var(--serif);font-size:20px;color:var(--mauve)}
+
+  /* ── PRODUCT LIST ── */
+  .list{padding-top:0}
+  table{width:100%;border-collapse:collapse;margin-bottom:48px}
+  tr{border-bottom:1px solid var(--line)}
+  td{padding:24px 0;vertical-align:middle}
+  .l-name{font-family:var(--serif);font-size:23px}
+  .l-type{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);padding:0 36px}
+  .l-notes{font-size:13px;color:var(--slate)}
+  .l-size{font-size:12px;color:var(--faint);text-align:right;padding-right:36px}
+  .l-price{font-family:var(--serif);font-size:18px;text-align:right;white-space:nowrap}
+  .center{text-align:center}
+  .btn-ghost{display:inline-block;border:1.5px solid var(--ink);padding:15px 40px;border-radius:40px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;transition:.25s}
+  .btn-ghost:hover{background:var(--ink);color:var(--cream)}
+
+  /* ── PHILOSOPHY ── */
+  .phil{background:var(--beige)}
+  .phil .grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+  .phil-media{border-radius:20px;overflow:hidden;aspect-ratio:1/1}
+  .phil h2{font-size:clamp(36px,4vw,50px);margin:14px 0 26px}
+  .phil p{font-size:14px;color:var(--slate);margin-bottom:18px}
+  .phil-stats{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin:38px 0;padding:38px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .ps b{font-family:var(--serif);font-size:30px;font-weight:400;display:block;line-height:1}
+  .ps .lbl{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-top:8px;display:block}
+  .ps .note{font-size:12px;color:var(--slate);margin-top:2px}
+  .arrow-link{font-size:11px;letter-spacing:.16em;text-transform:uppercase;display:inline-flex;align-items:center;gap:9px;color:var(--ink)}
+  .arrow-link:hover{color:var(--mauve)}
+
+  /* ── FAMILIES ── */
+  .fam{text-align:center}
+  .fam .head{max-width:520px;margin:0 auto 60px}
+  .fam .head h2{font-size:clamp(40px,4.5vw,58px);margin:14px 0 18px}
+  .fam .head p{font-size:14px;color:var(--slate)}
+  .fam-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;text-align:left}
+  .fam-card{border-radius:22px;padding:34px 28px 30px;cursor:pointer;transition:transform .25s}
+  .fam-card:hover{transform:translateY(-6px)}
+  .fam-card.floral{background:var(--pink-card)}
+  .fam-card.woody{background:var(--woody)}
+  .fam-card.fresh{background:var(--sage)}
+  .fam-card.oriental{background:var(--oriental)}
+  .fam-ico{width:54px;height:54px;border-radius:50%;border:1.5px solid rgba(43,26,20,.2);display:grid;place-items:center;color:rgba(43,26,20,.45);margin-bottom:26px}
+  .fam-card .nm{font-family:var(--serif);font-size:30px;margin-bottom:10px}
+  .fam-card .nt{font-size:12px;color:var(--slate);margin-bottom:26px}
+  .fam-card .lk{font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--ink)}
+  .fam-card .lk:hover{color:var(--mauve-deep)}
+
+  /* ── TESTIMONIALS ── */
+  .quotes{background:var(--sage);text-align:center}
+  .quotes .head{margin-bottom:56px}
+  .quotes .head h2{font-size:clamp(40px,4.5vw,58px);margin-top:14px}
+  .q-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;text-align:left}
+  .q-card{background:var(--cream);border-radius:18px;padding:38px}
+  .stars{color:var(--mauve);letter-spacing:5px;font-size:12px;margin-bottom:22px}
+  .q-card p{font-family:var(--serif);font-style:italic;font-size:19px;line-height:1.6;margin-bottom:26px}
+  .q-rule{height:1px;background:var(--line);margin-bottom:18px}
+  .q-name{font-size:13px;font-weight:500}
+  .q-loc{font-size:12px;color:var(--faint);margin-top:2px}
+
+  /* ── NEWSLETTER ── */
+  .nl-card{background:var(--pink-soft);border-radius:30px;padding:90px 40px;text-align:center;max-width:900px;margin:0 auto}
+  .nl-card h2{font-size:clamp(42px,5vw,58px);margin:16px 0 22px}
+  .nl-card .d{font-size:14px;color:var(--slate);max-width:420px;margin:0 auto 40px}
+  .nl-form{display:flex;gap:12px;max-width:520px;margin:0 auto 16px}
+  .nl-form input{flex:1;padding:17px 26px;border:1.5px solid rgba(43,26,20,.14);border-radius:40px;background:var(--cream);font-family:var(--sans);font-size:14px;font-weight:300;color:var(--ink);outline:none;transition:border-color .2s}
+  .nl-form input:focus{border-color:var(--mauve)}
+  .nl-form button{background:var(--mauve);color:#fff;border:0;padding:17px 32px;border-radius:40px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;white-space:nowrap;transition:background .2s}
+  .nl-form button:hover{background:var(--mauve-deep)}
+  .nl-note{font-size:12px;color:var(--faint)}
+
+  /* ── FOOTER ── */
+  footer{border-top:1px solid var(--line);padding:70px 0 40px}
+  .f-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px;margin-bottom:56px}
+  .f-brand{font-family:var(--serif);font-size:30px;display:block;margin-bottom:18px}
+  .f-tag{font-size:13px;color:var(--slate);max-width:250px;margin-bottom:28px}
+  .socials{display:flex;gap:11px}
+  .soc{width:38px;height:38px;border:1.5px solid var(--line);border-radius:50%;display:grid;place-items:center;color:var(--ink);transition:.2s}
+  .soc:hover{border-color:var(--mauve);color:var(--mauve)}
+  .f-col h4{font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:22px}
+  .f-col ul{list-style:none;display:flex;flex-direction:column;gap:13px}
+  .f-col a{font-size:14px;color:var(--slate);transition:color .2s}
+  .f-col a:hover{color:var(--mauve)}
+  .f-bottom{border-top:1px solid var(--line);padding-top:28px;display:flex;justify-content:space-between;align-items:center}
+  .f-copy{font-size:12px;color:var(--faint)}
+  .f-legal{display:flex;gap:28px}
+  .f-legal a{font-size:12px;color:var(--faint)}
+  .f-legal a:hover{color:var(--ink)}
+
+  /* ── RESPONSIVE ── */
+  @media(max-width:980px){
+    .wrap{padding:0 28px}
+    .hero{grid-template-columns:1fr;max-height:none}
+    .hero-copy{padding:48px 0}
+    .hero-media{height:440px;order:-1}
+    .section-grid{grid-template-columns:1fr}
+    .section-grid p{justify-self:start}
+    .cards,.q-grid{grid-template-columns:1fr}
+    .fam-grid{grid-template-columns:1fr 1fr}
+    .phil .grid{grid-template-columns:1fr;gap:48px}
+    .f-top{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:640px){
+    .menu,.l-type,.l-notes,.l-size{display:none}
+    .fam-grid{grid-template-columns:1fr}
+    .nl-form{flex-direction:column}
+    .f-top{grid-template-columns:1fr}
+    .f-bottom{flex-direction:column;gap:16px}
+    .stats{gap:34px}
+  }
+</style>
 </head>
+<body>
 
-<body class="text-gray-700 bg-white">
-
-  <header class="fixed top-0 w-full bg-white/90 backdrop-blur shadow-sm z-50">
-    <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="#hero" class="text-2xl font-light text-gray-800 tracking-wide">GLYNORY</a>
-      <ul class="hidden md:flex space-x-8 text-sm">
-        <li><a href="#about" class="hover:text-amber-600 transition">About</a></li>
-        <li><a href="#services" class="hover:text-amber-600 transition">Services</a></li>
-        <li><a href="#whychooseus" class="hover:text-amber-600 transition">Why Us</a></li>
-        <li><a href="#contact" class="hover:text-amber-600 transition">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <section id="hero" class="h-screen relative flex items-center justify-center text-center px-6 pt-20 overflow-hidden">
-    <!-- Blurred background image layer -->
-    <div class="absolute inset-0">
-      <img src="images/hero.png"
-        class="w-full h-full object-cover object-[center_5%] blur-sm scale-105"
-        alt="Background House Image">
+<!-- NAV -->
+<header>
+  <div class="wrap nav">
+    <a href="#" class="brand">Lumière</a>
+    <ul class="menu">
+      <li><a href="#collection">Collections</a></li>
+      <li><a href="#collection">Bestsellers</a></li>
+      <li><a href="#philosophy">Our Story</a></li>
+      <li><a href="#families">Ingredients</a></li>
+    </ul>
+    <div class="tools">
+      <button class="icon-btn" aria-label="Search">
+        <svg width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 4 4"/></svg>
+      </button>
+      <button class="icon-btn" aria-label="Cart">
+        <svg width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="badge">2</span>
+      </button>
     </div>
+  </div>
+</header>
 
-    <!-- Soft overlay -->
-    <div class="absolute inset-0 bg-white/10"></div>
-
-    <!-- Content Layer -->
-    <div class="relative z-10">
-      <h1 class="text-4xl md:text-5xl font-light leading-snug mb-4">A Softer Look at Your Home</h1>
-      <p class="text-md md:text-lg text-gray-600 max-w-xl mx-auto mb-6">
-        We offer gentle, detail-oriented inspections — crafted with care for buyers, owners, and developers in Phuket.
-      </p>
-      <a href="#contact"
-        class="inline-block bg-amber-100 text-gray-800 font-semibold px-6 py-3 rounded-full hover:bg-amber-200 transition">
-        Go to our Shop
-      </a>
+<!-- HERO -->
+<div class="wrap">
+  <section class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow">New Collection 2026</span>
+      <h1 class="display">Wear Your<br><em>Feelings</em></h1>
+      <p class="lead">Each bottle holds a story — handcrafted from rare botanicals and precious woods. A fragrance as unique as you are.</p>
+      <div class="cta-row">
+        <a href="#collection" class="btn btn-fill">Explore Now &rarr;</a>
+        <a href="#philosophy" class="btn btn-link">Our Story</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>120+</b><span>Fragrances</span></div>
+        <div class="stat"><b>32</b><span>Countries</span></div>
+        <div class="stat"><b>50K</b><span>Happy Customers</span></div>
+      </div>
     </div>
-  </section>
-
-  <section id="services" class="py-24 bg-white text-center">
-    <div class="max-w-5xl mx-auto px-6">
-      <h2 class="text-3xl font-light mb-2">Our Products</h2>
-      <p class="text-gray-500 mb-12">Curated with simplicity and attention to detail</p>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="p-6 border border-gray-200 rounded-lg hover-soft transition">
-          <h3 class="text-lg font-medium mb-2">Pre-Purchase</h3>
-          <p class="text-sm text-gray-500">For peace of mind before you invest.</p>
-        </div>
-        <div class="p-6 border border-gray-200 rounded-lg hover-soft transition">
-          <h3 class="text-lg font-medium mb-2">Pre-Delivery</h3>
-          <p class="text-sm text-gray-500">Ensure your new home is ready to welcome you.</p>
-        </div>
-        <div class="p-6 border border-gray-200 rounded-lg hover-soft transition">
-          <h3 class="text-lg font-medium mb-2">Maintenance</h3>
-          <p class="text-sm text-gray-500">Stay ahead of wear and time.</p>
-        </div>
-        <div class="p-6 border border-gray-200 rounded-lg hover-soft transition">
-          <h3 class="text-lg font-medium mb-2">Warranty Check</h3>
-          <p class="text-sm text-gray-500">Before your builder’s promise fades.</p>
-        </div>
+    <div class="hero-media">
+      <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=1000&q=80" alt="Lumière signature perfume bottle surrounded by rose petals">
+      <div class="float-card">
+        <span class="k">Bestseller</span>
+        <span class="n">Rose Velvet Eau de Parfum</span>
+        <span class="pr">$89.00</span>
       </div>
     </div>
   </section>
+</div>
 
-  <section id="about" class="py-24 bg-amber-50 text-center">
-    <div class="max-w-2xl mx-auto px-6">
-      <h2 class="text-3xl font-light mb-4">About Us</h2>
-      <p class="text-md text-gray-600 leading-relaxed">
-        We blend construction expertise with clarity and elegance — delivering inspection reports that are not only precise but also beautifully explained. Trust us to bring transparency to your home journey.
-      </p>
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span class="ticker-item">Cruelty Free &amp; Vegan</span>
+    <span class="ticker-item">Satisfaction Guaranteed</span>
+    <span class="ticker-item">Artisan Perfumery Since 2010</span>
+    <span class="ticker-item">Free Shipping Over $75</span>
+    <span class="ticker-item">Handcrafted Fragrances</span>
+    <span class="ticker-item">100% Natural Ingredients</span>
+    <span class="ticker-item">Cruelty Free &amp; Vegan</span>
+    <span class="ticker-item">Satisfaction Guaranteed</span>
+    <span class="ticker-item">Artisan Perfumery Since 2010</span>
+    <span class="ticker-item">Free Shipping Over $75</span>
+    <span class="ticker-item">Handcrafted Fragrances</span>
+    <span class="ticker-item">100% Natural Ingredients</span>
+  </div>
+</div>
+
+<!-- SIGNATURE COLLECTION -->
+<div class="wrap">
+  <section id="collection">
+    <div class="section-grid">
+      <div>
+        <span class="eyebrow head-label">Featured</span>
+        <h2 class="display">Signature<br>Collection</h2>
+      </div>
+      <p>Each scent is a journey — born from nature, refined through craft, and bottled for those who appreciate the extraordinary.</p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="card-media">
+          <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=700&q=80" alt="Rose Velvet perfume">
+          <span class="tag best">Bestseller</span>
+          <button class="heart" aria-label="Wishlist"><svg width="15" height="15" fill="none" stroke="#9A6A78" stroke-width="1.6" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 1 0-7.8 7.8l1 1.1L12 21.2l7.8-7.7 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg></button>
+        </div>
+        <div class="card-body">
+          <div><div class="nm">Rose Velvet</div><div class="sub">Eau de Parfum</div></div>
+          <div class="price">$89</div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-media">
+          <img src="https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=700&q=80" alt="Jardin Vert perfume">
+          <span class="tag new">New</span>
+          <button class="heart" aria-label="Wishlist"><svg width="15" height="15" fill="none" stroke="#9A6A78" stroke-width="1.6" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 1 0-7.8 7.8l1 1.1L12 21.2l7.8-7.7 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg></button>
+        </div>
+        <div class="card-body">
+          <div><div class="nm">Jardin Vert</div><div class="sub">Eau de Toilette</div></div>
+          <div class="price">$74</div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-media">
+          <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?auto=format&fit=crop&w=700&q=80" alt="Lavande Dance perfume">
+          <button class="heart" aria-label="Wishlist"><svg width="15" height="15" fill="none" stroke="#9A6A78" stroke-width="1.6" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 1 0-7.8 7.8l1 1.1L12 21.2l7.8-7.7 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg></button>
+        </div>
+        <div class="card-body">
+          <div><div class="nm">Lavande Dance</div><div class="sub">Eau de Parfum</div></div>
+          <div class="price">$95</div>
+        </div>
+      </article>
     </div>
   </section>
+</div>
 
-  <section id="whychooseus" class="py-24 bg-white text-center">
-    <div class="max-w-5xl mx-auto px-6">
-      <h2 class="text-3xl font-light mb-12">Why Choose Us</h2>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="p-6 border border-gray-200 rounded-lg">
-          <h3 class="text-lg font-medium mb-2">Certified Inspectors</h3>
-          <p class="text-sm text-gray-500">With years of site experience in Phuket.</p>
-        </div>
-        <div class="p-6 border border-gray-200 rounded-lg">
-          <h3 class="text-lg font-medium mb-2">Clear Visual Reports</h3>
-          <p class="text-sm text-gray-500">Delivered digitally within 48 hours.</p>
-        </div>
-        <div class="p-6 border border-gray-200 rounded-lg">
-          <h3 class="text-lg font-medium mb-2">Client-First Approach</h3>
-          <p class="text-sm text-gray-500">Unbiased, honest, and thoughtfully presented.</p>
+<!-- PRODUCT LIST -->
+<div class="wrap">
+  <section class="list">
+    <table>
+      <tbody>
+        <tr><td class="l-name">Rose Velvet</td><td class="l-type">Eau de Parfum</td><td class="l-notes">Rose, Musk, Peach</td><td class="l-size">50 mL</td><td class="l-price">$89</td></tr>
+        <tr><td class="l-name">Jardin Vert</td><td class="l-type">Eau de Toilette</td><td class="l-notes">Green Tea, Citrus, Cedar</td><td class="l-size">50 mL</td><td class="l-price">$74</td></tr>
+        <tr><td class="l-name">Lavande Dance</td><td class="l-type">Eau de Parfum</td><td class="l-notes">Lavender, Sandalwood, Amber</td><td class="l-size">50 mL</td><td class="l-price">$95</td></tr>
+        <tr><td class="l-name">Bois Noir</td><td class="l-type">Extrait de Parfum</td><td class="l-notes">Oud, Vanilla, Leather</td><td class="l-size">50 mL</td><td class="l-price">$120</td></tr>
+      </tbody>
+    </table>
+    <div class="center"><a href="#" class="btn-ghost">View All Fragrances</a></div>
+  </section>
+</div>
+
+<!-- PHILOSOPHY -->
+<section class="phil" id="philosophy">
+  <div class="wrap grid">
+    <div class="phil-media">
+      <img src="https://images.unsplash.com/photo-1557170334-a9632e77c6e4?auto=format&fit=crop&w=900&q=80" alt="Collection of artisan perfume bottles with flowers">
+    </div>
+    <div>
+      <span class="eyebrow">Our Philosophy</span>
+      <h2 class="display">Perfumery as an Art Form</h2>
+      <p>Founded in the sun-drenched fields of Grasse, Lumière was born from a belief that fragrance is the most intimate form of self-expression. We work closely with small-batch growers to source the finest botanicals.</p>
+      <p>Every bottle in our collection is crafted by hand, using traditional French perfumery techniques refined over generations. No shortcuts. No compromises. Just pure, lasting beauty.</p>
+      <div class="phil-stats">
+        <div class="ps"><b>15 years</b><span class="lbl">Artisan Heritage</span></div>
+        <div class="ps"><b>100%</b><span class="lbl">Natural Ingredients</span></div>
+        <div class="ps"><span class="lbl">No parabens</span><span class="note">Clean Formulation</span></div>
+        <div class="ps"><span class="lbl">Recyclable</span><span class="note">Packaging</span></div>
+      </div>
+      <a href="#" class="arrow-link">Read Our Story &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAMILIES -->
+<div class="wrap">
+  <section class="fam" id="families">
+    <div class="head">
+      <span class="eyebrow">Fragrance Families</span>
+      <h2 class="display">Find Your Scent</h2>
+      <p>Explore our curated fragrance families and discover the notes that speak to your soul.</p>
+    </div>
+    <div class="fam-grid">
+      <div class="fam-card floral">
+        <div class="fam-ico"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2a3 3 0 0 1 0 6 3 3 0 0 1 0-6zM12 16a3 3 0 0 1 0 6 3 3 0 0 1 0-6zM2 12a3 3 0 0 1 6 0 3 3 0 0 1-6 0zM16 12a3 3 0 0 1 6 0 3 3 0 0 1-6 0z"/></svg></div>
+        <div class="nm">Floral</div>
+        <div class="nt">Rose, Jasmine, Peony, Violet</div>
+        <a href="#" class="lk">Shop Now &rarr;</a>
+      </div>
+      <div class="fam-card woody">
+        <div class="fam-ico"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24"><path d="M12 2 4 7v10l8 5 8-5V7l-8-5z"/></svg></div>
+        <div class="nm">Woody</div>
+        <div class="nt">Cedarwood, Sandalwood, Oud</div>
+        <a href="#" class="lk">Shop Now &rarr;</a>
+      </div>
+      <div class="fam-card fresh">
+        <div class="fam-ico"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 1 0 20M12 2a10 10 0 0 0 0 20M2 12h20M12 2c-2.5 3-4 6-4 10s1.5 7 4 10M12 2c2.5 3 4 6 4 10s-1.5 7-4 10"/></svg></div>
+        <div class="nm">Fresh</div>
+        <div class="nt">Citrus, Green Tea, Aquatic</div>
+        <a href="#" class="lk">Shop Now &rarr;</a>
+      </div>
+      <div class="fam-card oriental">
+        <div class="fam-ico"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24"><polygon points="12 2 15 8.3 22 9.3 17 14.1 18.2 21 12 17.8 5.8 21 7 14.1 2 9.3 8.9 8.3"/></svg></div>
+        <div class="nm">Oriental</div>
+        <div class="nt">Amber, Vanilla, Spices, Musk</div>
+        <a href="#" class="lk">Shop Now &rarr;</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- TESTIMONIALS -->
+<section class="quotes">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Testimonials</span>
+      <h2 class="display">What Our Customers Say</h2>
+    </div>
+    <div class="q-grid">
+      <div class="q-card">
+        <div class="stars">★ ★ ★ ★ ★</div>
+        <p>“Rose Velvet has become my signature scent. People stop me everywhere to ask what I'm wearing. Simply divine.”</p>
+        <div class="q-rule"></div>
+        <div class="q-name">Sophie L.</div>
+        <div class="q-loc">Paris, France</div>
+      </div>
+      <div class="q-card">
+        <div class="stars">★ ★ ★ ★ ★</div>
+        <p>“The quality is unlike anything I've found elsewhere. Long-lasting, complex, and deeply feminine. Worth every penny.”</p>
+        <div class="q-rule"></div>
+        <div class="q-name">Amara K.</div>
+        <div class="q-loc">London, UK</div>
+      </div>
+      <div class="q-card">
+        <div class="stars">★ ★ ★ ★ ★</div>
+        <p>“Jardin Vert feels like a walk through a morning garden. Fresh yet sophisticated. I wear it every single day.”</p>
+        <div class="q-rule"></div>
+        <div class="q-name">Mia T.</div>
+        <div class="q-loc">New York, USA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<div class="wrap">
+  <section>
+    <div class="nl-card">
+      <span class="eyebrow">Join the Club</span>
+      <h2 class="display">First to Know,<br>First to Bloom</h2>
+      <p class="d">Subscribe for exclusive launches, perfumery tips, and a 10% welcome gift on your first order.</p>
+      <form class="nl-form" onsubmit="return false;">
+        <input type="email" placeholder="Enter your email address" aria-label="Email address">
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="nl-note">No spam. Unsubscribe anytime.</p>
+    </div>
+  </section>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="f-top">
+      <div>
+        <span class="f-brand">Lumière</span>
+        <p class="f-tag">Artisan perfumery crafted from the rarest botanicals on earth. Born in Grasse, loved worldwide.</p>
+        <div class="socials">
+          <a href="#" class="soc" aria-label="Instagram"><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg></a>
+          <a href="#" class="soc" aria-label="Facebook"><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" class="soc" aria-label="YouTube"><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M22.5 6.4a2.8 2.8 0 0 0-1.9-2C18.9 4 12 4 12 4s-6.9 0-8.6.4a2.8 2.8 0 0 0-2 2A29 29 0 0 0 1 12a29 29 0 0 0 .5 5.6 2.8 2.8 0 0 0 1.9 2C5.1 20 12 20 12 20s6.9 0 8.6-.4a2.8 2.8 0 0 0 1.9-2A29 29 0 0 0 23 12a29 29 0 0 0-.5-5.6z"/><polygon points="9.75 15 15.5 12 9.75 9"/></svg></a>
         </div>
       </div>
-      <a href="#contact"
-        class="mt-12 inline-block bg-amber-400 text-white px-6 py-3 rounded-full hover:bg-amber-500 transition">
-        Get a Quote
-      </a>
-    </div>
-  </section>
-
-  <section id="contact" class="py-24 bg-gradient-to-br from-amber-50 to-white text-center">
-    <div class="max-w-xl mx-auto px-6">
-      <h2 class="text-3xl font-light mb-4">Connect with Us</h2>
-      <p class="text-md text-gray-600 mb-6">For inquiries or to schedule your inspection.</p>
-      <div class="space-y-3 text-lg text-gray-700">
-        <p>📞 <a href="tel:+66812345678" class="hover:text-amber-600 transition">+66 81 234 5678</a></p>
-        <p>✉️ <a href="mailto:info@phukethousecheck.com" class="hover:text-amber-600 transition">info@phukethousecheck.com</a></p>
+      <div class="f-col">
+        <h4>Shop</h4>
+        <ul><li><a href="#">New Arrivals</a></li><li><a href="#">Bestsellers</a></li><li><a href="#">Gift Sets</a></li><li><a href="#">Sample Kit</a></li></ul>
+      </div>
+      <div class="f-col">
+        <h4>Help</h4>
+        <ul><li><a href="#">FAQ</a></li><li><a href="#">Shipping &amp; Returns</a></li><li><a href="#">Track Your Order</a></li><li><a href="#">Contact Us</a></li></ul>
+      </div>
+      <div class="f-col">
+        <h4>Company</h4>
+        <ul><li><a href="#">Our Story</a></li><li><a href="#">Ingredients</a></li><li><a href="#">Sustainability</a></li><li><a href="#">Press</a></li></ul>
       </div>
     </div>
-  </section>
-
-  <footer class="bg-white border-t border-gray-100 py-8 text-center text-gray-400 text-sm">
-    <div class="flex justify-center space-x-6 mb-4">
-      <a href="https://facebook.com/yourpage" target="_blank" class="hover:text-gray-600">Facebook</a>
-      <a href="https://line.me/R/ti/p/@yourlineid" target="_blank" class="hover:text-gray-600">LINE</a>
-      <a href="tel:+66812345678" class="hover:text-gray-600">Phone</a>
+    <div class="f-bottom">
+      <span class="f-copy">© 2026 Lumière Parfums. All rights reserved.</span>
+      <div class="f-legal"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Cookie Policy</a></div>
     </div>
-    <p>&copy; 2025 Phuket House Check. Crafted with care.</p>
-  </footer>
+  </div>
+</footer>
 
 </body>
 </html>
